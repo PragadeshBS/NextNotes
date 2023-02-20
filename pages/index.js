@@ -28,9 +28,14 @@ export default function Home() {
       });
   };
   return (
-    <div className="">
-      <h1 className="pl-3 font-bold text-3xl">Notes</h1>
+    <div>
       <p>No. of notes: {notes.length}</p>
+      <Link
+        href="/create"
+        className="font-medium text-blue-900 dark:text-blue-500 hover:underline"
+      >
+        Add a note
+      </Link>
       <div className="my-3 grid grid-cols-3 gap-4">
         {notes.length > 0 &&
           notes.map((note) => (
@@ -49,12 +54,6 @@ export default function Home() {
             </div>
           ))}
       </div>
-      <Link
-        href="/create"
-        className="font-medium text-blue-900 dark:text-blue-500 hover:underline"
-      >
-        Add a note
-      </Link>
     </div>
   );
 }
